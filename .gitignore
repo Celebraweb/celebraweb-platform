@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# React / Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Visual Studio Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Docker
+docker-data/
+
+# PostgreSQL
+postgres-data/
+
+# Redis
+redis-data/
+
+# MinIO
+minio-data/
+
+# Outline
+outline-data/
+
+# Tests
+.pytest_cache/
+
+# Misc
+.DS_Store
