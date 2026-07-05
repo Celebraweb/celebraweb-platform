@@ -1,0 +1,33 @@
+manifest:
+  version: '1.0'
+project:
+  name: CelebraWeb Platform
+  code: CW
+  version: 0.2.0
+organization:
+  company: CelebraWeb
+  owner: Founder / CEO
+lifecycle:
+  phase: Foundation
+  stage: Engineering
+sprint:
+  current: 12
+  name: Sprint 12
+  status: In Progress
+  objective: Persistencia con PostgreSQL y Alembic
+release:
+  current: 0.2.0
+  next: 0.3.0
+engineering:
+  architecture: Approved
+  database: PostgreSQL
+  backend: FastAPI
+  frontend: React
+eks:
+  version: '1.0'
+  status: Active
+pmo:
+  version: 0.1.0
+  status: Development
+last_update:
+  date: '2026-06-30'

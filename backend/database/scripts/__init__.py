@@ -1,0 +1,3 @@
+"""
+CelebraWeb Platform Database Scripts.
+"""
