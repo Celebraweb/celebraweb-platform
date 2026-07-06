@@ -1,12 +1,7 @@
-import AdminLayout from "./layouts/AdminLayout";
-import LoginPage from "./features/auth/LoginPage";
+import { RouterProvider } from "react-router-dom";
 
-function App() {
-  return (
-    <AdminLayout>
-      <LoginPage />
-    </AdminLayout>
-  );
+import { router } from "@/routes";
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
-
-export default App;

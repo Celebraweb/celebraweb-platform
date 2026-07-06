@@ -1,4 +1,4 @@
-# Sprint 12 Summary
+# Sprint 13 Summary
 
 ---
 
@@ -12,7 +12,7 @@
 
 **Fase:** Foundation
 
-**Sprint:** 12
+**Sprint:** 13
 
 **Estado:** In Progress
 

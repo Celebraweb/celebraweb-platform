@@ -1,4 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Header() {
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    localStorage.removeItem("access_token");
+
+    navigate("/", {
+      replace: true,
+    });
+  }
+
   return (
     <header
       style={{
@@ -14,7 +26,25 @@ export default function Header() {
         <strong>CelebraWeb XOP</strong>
       </div>
 
-      <div>Administrador</div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "20px",
+        }}
+      >
+        <span>Administrador</span>
+
+        <button
+          onClick={handleLogout}
+          style={{
+            padding: "8px 16px",
+            cursor: "pointer",
+          }}
+        >
+          Cerrar sesión
+        </button>
+      </div>
     </header>
   );
 }
