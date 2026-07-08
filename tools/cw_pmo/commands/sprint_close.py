@@ -34,8 +34,6 @@ class SprintCloseCommand:
 
         context = project.get_context()
 
-        sprint = context.sprint
-
         handbook = ENGINEERING / "CW-500-Engineering-Handbook.md"
 
         print("1. Generando documentación...")
@@ -78,7 +76,18 @@ Estado : Closed
 
         loader.save(manifest)
 
-        commit_message = f"Sprint {context.sprint} - {context.sprint_name}"
+        #
+        # Mensaje de commit
+        #
+
+        if getattr(context, "capability_name", ""):
+            commit_message = (
+                f"Sprint {context.sprint} - {context.capability_name}"
+            )
+        else:
+            commit_message = (
+                f"Sprint {context.sprint} - {context.sprint_name}"
+            )
 
         print()
         print("============================================================")
@@ -90,7 +99,7 @@ Estado : Closed
         print(f"Versión  : {context.version}")
         print(f"Release  : {context.release}")
         print(f"Sprint   : {context.sprint}")
-        print(f"Estado   : Closed")
+        print("Estado   : Closed")
 
         print()
         print("✓ Documentación generada")
@@ -104,17 +113,32 @@ Estado : Closed
         print("============================================================")
         print()
 
-        print("Revise primero el estado del repositorio:")
-
-        print()
+        print("Paso 1 - Revisar los cambios detectados")
+        print("---------------------------------------")
         print("git status")
 
         print()
-        print("Si todo es correcto ejecute:")
+        print("Paso 2 - Agregar los cambios al área de staging")
+        print("-----------------------------------------------")
+        print("git add .")
 
         print()
-        print("git add .")
+        print("Paso 3 - Verificar el área de staging")
+        print("-------------------------------------")
+        print("git status")
+
+        print()
+        print("Debe aparecer:")
+        print("Changes to be committed")
+
+        print()
+        print("Paso 4 - Crear el commit")
+        print("------------------------")
         print(f'git commit -m "{commit_message}"')
+
+        print()
+        print("Paso 5 - Publicar el Sprint")
+        print("---------------------------")
         print("git push")
 
         print()

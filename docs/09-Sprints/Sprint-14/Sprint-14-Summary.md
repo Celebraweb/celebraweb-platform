@@ -14,7 +14,7 @@
 
 **Sprint:** 14
 
-**Estado:** In Progress
+**Estado:** Closed
 
 ---
 

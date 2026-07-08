@@ -1422,9 +1422,9 @@ Release : 0.2.0
 
 Fase : Foundation
 
-Sprint : 13
+Sprint : 14
 
-Nombre Sprint : Sprint 13
+Nombre Sprint : Sprint 14
 
 Estado : Closed
 
