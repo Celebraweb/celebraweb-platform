@@ -11,8 +11,8 @@ lifecycle:
   phase: Foundation
   stage: Engineering
 sprint:
-  current: 13
-  name: Sprint 13
+  current: 14
+  name: Sprint 14
   status: Closed
   objective: Persistencia con PostgreSQL y Alembic
 release:
@@ -31,3 +31,15 @@ pmo:
   status: Development
 last_update:
   date: '2026-06-30'
+current_work:
+  product: CelebraWeb
+  capability:
+    id: BC-001
+    name: Identity Management
+    domain: Platform Core
+  sprint_goal: Implementar autenticación y gestión básica de usuarios.
+architecture:
+  capability_model:
+    document: CW-230
+    version: 1.1.0
+    status: REVIEW

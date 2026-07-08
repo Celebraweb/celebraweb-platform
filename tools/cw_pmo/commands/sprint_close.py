@@ -20,9 +20,12 @@ class SprintCloseCommand:
     def execute(self):
 
         print()
-        print("===================================")
-        print("CW PMO - Sprint Close")
-        print("===================================")
+        print("============================================================")
+        print("                 CELEBRAWEB PMO")
+        print("============================================================")
+        print()
+        print("SPRINT CLOSING CEREMONY")
+        print()
 
         project = ProjectService()
         generator = GenerateService()
@@ -38,7 +41,7 @@ class SprintCloseCommand:
         print("1. Generando documentación...")
         generator.run()
 
-        print("2. Backup...")
+        print("2. Realizando backup...")
         backup.backup(handbook)
 
         print("3. Actualizando PMO...")
@@ -75,5 +78,46 @@ Estado : Closed
 
         loader.save(manifest)
 
+        commit_message = f"Sprint {context.sprint} - {context.sprint_name}"
+
         print()
-        print(f"Sprint {sprint} cerrado correctamente.")
+        print("============================================================")
+        print("SPRINT CLOSED SUCCESSFULLY")
+        print("============================================================")
+        print()
+
+        print(f"Proyecto : {context.project}")
+        print(f"Versión  : {context.version}")
+        print(f"Release  : {context.release}")
+        print(f"Sprint   : {context.sprint}")
+        print(f"Estado   : Closed")
+
+        print()
+        print("✓ Documentación generada")
+        print("✓ Backup realizado")
+        print("✓ PROJECT.yaml actualizado")
+        print("✓ Sprint cerrado")
+
+        print()
+        print("============================================================")
+        print("NEXT STEP - PUBLICAR EN GITHUB")
+        print("============================================================")
+        print()
+
+        print("Revise primero el estado del repositorio:")
+
+        print()
+        print("git status")
+
+        print()
+        print("Si todo es correcto ejecute:")
+
+        print()
+        print("git add .")
+        print(f'git commit -m "{commit_message}"')
+        print("git push")
+
+        print()
+        print("============================================================")
+        print("SPRINT COMPLETED")
+        print("============================================================")

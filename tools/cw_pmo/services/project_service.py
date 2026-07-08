@@ -17,16 +17,41 @@ class ProjectService:
 
         self.context = ProjectContext(
 
+            # ==========================================================
+            # Proyecto
+            # ==========================================================
+
             project=self.data["project"]["name"],
             version=self.data["project"]["version"],
+            release=self.data["release"]["current"],
+            phase=self.data["lifecycle"]["phase"],
+
+            # ==========================================================
+            # Sprint
+            # ==========================================================
 
             sprint=self.data["sprint"]["current"],
             sprint_name=self.data["sprint"]["name"],
             sprint_status=self.data["sprint"]["status"],
 
-            phase=self.data["lifecycle"]["phase"],
+            # ==========================================================
+            # Trabajo actual
+            # ==========================================================
 
-            release=self.data["release"]["current"],
+            product=self.data["current_work"]["product"],
+
+            capability_id=self.data["current_work"]["capability"]["id"],
+            capability_name=self.data["current_work"]["capability"]["name"],
+            capability_domain=self.data["current_work"]["capability"]["domain"],
+
+            sprint_goal=self.data["current_work"]["sprint_goal"],
+
+            # ==========================================================
+            # Arquitectura
+            # ==========================================================
+
+            capability_model=self.data["architecture"]["capability_model"]["document"],
+            capability_model_version=self.data["architecture"]["capability_model"]["version"],
         )
 
     def get_context(self):
@@ -48,16 +73,41 @@ class ProjectService:
 
         self.context = ProjectContext(
 
+            # ==========================================================
+            # Proyecto
+            # ==========================================================
+
             project=self.data["project"]["name"],
             version=self.data["project"]["version"],
+            release=self.data["release"]["current"],
+            phase=self.data["lifecycle"]["phase"],
+
+            # ==========================================================
+            # Sprint
+            # ==========================================================
 
             sprint=self.data["sprint"]["current"],
             sprint_name=self.data["sprint"]["name"],
             sprint_status=self.data["sprint"]["status"],
 
-            phase=self.data["lifecycle"]["phase"],
+            # ==========================================================
+            # Trabajo actual
+            # ==========================================================
 
-            release=self.data["release"]["current"],
+            product=self.data["current_work"]["product"],
+
+            capability_id=self.data["current_work"]["capability"]["id"],
+            capability_name=self.data["current_work"]["capability"]["name"],
+            capability_domain=self.data["current_work"]["capability"]["domain"],
+
+            sprint_goal=self.data["current_work"]["sprint_goal"],
+
+            # ==========================================================
+            # Arquitectura
+            # ==========================================================
+
+            capability_model=self.data["architecture"]["capability_model"]["document"],
+            capability_model_version=self.data["architecture"]["capability_model"]["version"],
         )
 
         return self.context
