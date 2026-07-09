@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <aside
@@ -47,35 +49,68 @@ export default function Sidebar() {
       <MenuSection
         title="PLATFORM"
         items={[
-          "🏠 Dashboard",
+          {
+            label: "🏠 Dashboard",
+            path: "/dashboard",
+          },
         ]}
       />
 
       <MenuSection
         title="ADMINISTRATION"
         items={[
-          "🏢 Organizations",
-          "👥 Users",
-          "🛡 Roles",
+          {
+            label: "🏢 Organizations",
+            path: "/organizations",
+          },
+          {
+            label: "👥 Users",
+            path: "#",
+          },
+          {
+            label: "🛡 Roles",
+            path: "#",
+          },
         ]}
       />
 
       <MenuSection
         title="BUSINESS"
         items={[
-          "📅 Events",
-          "💌 Invitations",
-          "💰 Finance",
-          "📊 Analytics",
+          {
+            label: "📅 Events",
+            path: "#",
+          },
+          {
+            label: "💌 Invitations",
+            path: "#",
+          },
+          {
+            label: "💰 Finance",
+            path: "#",
+          },
+          {
+            label: "📊 Analytics",
+            path: "#",
+          },
         ]}
       />
 
       <MenuSection
         title="PLATFORM SERVICES"
         items={[
-          "⚙ Configuration",
-          "🖥 Platform Administration",
-          "🤖 Artificial Intelligence",
+          {
+            label: "⚙ Configuration",
+            path: "#",
+          },
+          {
+            label: "🖥 Platform Administration",
+            path: "#",
+          },
+          {
+            label: "🤖 Artificial Intelligence",
+            path: "#",
+          },
         ]}
       />
 
@@ -93,10 +128,15 @@ export default function Sidebar() {
   );
 }
 
-type MenuSectionProps = {
+interface MenuItem {
+  label: string;
+  path: string;
+}
+
+interface MenuSectionProps {
   title: string;
-  items: string[];
-};
+  items: MenuItem[];
+}
 
 function MenuSection({
   title,
@@ -121,15 +161,19 @@ function MenuSection({
       </div>
 
       {items.map((item) => (
-        <div
-          key={item}
-          style={{
+        <NavLink
+          key={item.label}
+          to={item.path}
+          style={({ isActive }) => ({
+            display: "block",
             padding: "8px 0",
-            cursor: "pointer",
-          }}
+            color: isActive ? "#61dafb" : "#ffffff",
+            textDecoration: "none",
+            fontWeight: isActive ? "bold" : "normal",
+          })}
         >
-          {item}
-        </div>
+          {item.label}
+        </NavLink>
       ))}
     </div>
   );

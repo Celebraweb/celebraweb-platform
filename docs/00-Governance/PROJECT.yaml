@@ -11,8 +11,8 @@ lifecycle:
   phase: Foundation
   stage: Engineering
 sprint:
-  current: 14
-  name: Sprint 14
+  current: 15
+  name: Sprint 15
   status: Closed
   objective: Persistencia con PostgreSQL y Alembic
 release:
