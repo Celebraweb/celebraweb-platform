@@ -14,8 +14,8 @@ release:
   current: 0.3.0
   next: 0.4.0
 sprint:
-  current: 16
-  name: Sprint 16
+  current: 17
+  name: Sprint 17
   status: Closed
   objective: User Management
 engineering:

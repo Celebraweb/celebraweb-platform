@@ -69,7 +69,7 @@ export default function Sidebar() {
           },
           {
             label: "🛡 Roles",
-            path: "#",
+            path: "/roles",
           },
         ]}
       />
@@ -122,7 +122,7 @@ export default function Sidebar() {
           color: "#8d939b",
         }}
       >
-        XOP Platform v0.3.0
+        XOP Platform v0.2.0
       </div>
     </aside>
   );

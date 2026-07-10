@@ -1422,9 +1422,9 @@ Release : 0.3.0
 
 Fase : Foundation
 
-Sprint : 16
+Sprint : 17
 
-Nombre Sprint : Sprint 16
+Nombre Sprint : Sprint 17
 
 Estado : Closed
 

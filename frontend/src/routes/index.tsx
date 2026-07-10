@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import LoginPage from "@/features/auth/LoginPage";
+
 import DashboardPage from "@/pages/DashboardPage";
 
 import OrganizationsPage from "@/features/organizations/pages/OrganizationsPage";
 import UsersPage from "@/features/users/pages/UsersPage";
+import RolesPage from "@/features/roles/pages/RolesPage";
 
 import AdminLayout from "@/layouts/AdminLayout";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
@@ -40,6 +42,16 @@ export const router = createBrowserRouter([
       <ProtectedRoute>
         <AdminLayout>
           <UsersPage />
+        </AdminLayout>
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/roles",
+    element: (
+      <ProtectedRoute>
+        <AdminLayout>
+          <RolesPage />
         </AdminLayout>
       </ProtectedRoute>
     ),
