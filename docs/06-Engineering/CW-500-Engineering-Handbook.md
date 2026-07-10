@@ -1416,15 +1416,15 @@ Los siguientes Sprint deberán enfocarse en:
 
 Proyecto : CelebraWeb Platform
 
-Versión : 0.2.0
+Versión : 0.3.0
 
-Release : 0.2.0
+Release : 0.3.0
 
 Fase : Foundation
 
-Sprint : 15
+Sprint : 16
 
-Nombre Sprint : Sprint 15
+Nombre Sprint : Sprint 16
 
 Estado : Closed
 

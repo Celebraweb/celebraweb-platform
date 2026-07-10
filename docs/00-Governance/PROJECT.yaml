@@ -3,21 +3,21 @@ manifest:
 project:
   name: CelebraWeb Platform
   code: CW
-  version: 0.2.0
+  version: 0.3.0
 organization:
   company: CelebraWeb
   owner: Founder / CEO
 lifecycle:
   phase: Foundation
   stage: Engineering
-sprint:
-  current: 15
-  name: Sprint 15
-  status: Closed
-  objective: Persistencia con PostgreSQL y Alembic
 release:
-  current: 0.2.0
-  next: 0.3.0
+  current: 0.3.0
+  next: 0.4.0
+sprint:
+  current: 16
+  name: Sprint 16
+  status: Closed
+  objective: User Management
 engineering:
   architecture: Approved
   database: PostgreSQL
@@ -27,19 +27,23 @@ eks:
   version: '1.0'
   status: Active
 pmo:
-  version: 0.1.0
-  status: Development
+  version: 0.2.0
+  status: Active
 last_update:
-  date: '2026-06-30'
+  date: '2026-07-09'
 current_work:
   product: CelebraWeb
   capability:
-    id: BC-001
-    name: Identity Management
+    id: BC-003
+    name: User Management
     domain: Platform Core
-  sprint_goal: Implementar autenticación y gestión básica de usuarios.
+  user_story:
+    id: US-001
+    name: List Users
+    status: In Progress
+  sprint_goal: Implementar la gestión de usuarios reutilizando el patrón CRUD aprobado.
 architecture:
   capability_model:
     document: CW-230
     version: 1.1.0
-    status: REVIEW
+    status: APPROVED
