@@ -12,6 +12,10 @@ import {
   deleteUser,
 } from "../services/user.service";
 
+import {
+  replaceUserRoles,
+} from "../services/userRole.service";
+
 import UsersTable from "../components/UsersTable";
 import UserForm from "../components/UserForm";
 
@@ -82,20 +86,33 @@ export default function UsersPage() {
 
     try {
 
+      const {
+        role_ids,
+        ...userData
+      } = data;
+
+      let savedUser: User;
+
       if (selectedUser) {
 
-        await updateUser(
+        savedUser = await updateUser(
           selectedUser.id,
-          data
+          userData,
         );
 
       } else {
 
-        await createUser(data);
+        savedUser = await createUser(
+          userData,
+        );
 
       }
 
-      setOpen(false);
+      await replaceUserRoles(
+        savedUser.id,
+        role_ids ?? [],
+      );
+            setOpen(false);
 
       setSelectedUser(null);
 

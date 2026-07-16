@@ -8,6 +8,7 @@ import sys
 from services.project_service import ProjectService
 
 from commands.generate_command import GenerateCommand
+from commands.review_command import ReviewCommand
 from commands.sync_command import SyncCommand
 from commands.sprint_close import SprintCloseCommand
 from commands.start_command import StartCommand
@@ -43,6 +44,11 @@ def main():
 
     command = sys.argv[1].lower()
 
+    if command == "review":
+        ReviewCommand().run()
+        return
+
+
     if command == "start":
         StartCommand().run()
         return
@@ -68,6 +74,7 @@ def main():
     print()
     print("Comandos disponibles:")
     print("  start")
+    print("  review")
     print("  generate")
     print("  sync")
     print("  validate")

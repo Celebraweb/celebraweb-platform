@@ -2,8 +2,18 @@ import { useEffect, useState } from "react";
 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import MultiSelect from "@/components/ui/MultiSelect";
 
 import type { Role } from "../types/role";
+import type { Permission } from "@/features/permissions/types/permission";
+
+import {
+  getPermissions,
+} from "@/features/permissions/services/permission.service";
+
+import {
+  getRolePermissions,
+} from "../services/rolePermission.service";
 
 interface RoleFormProps {
   initialData?: Role | null;
@@ -17,6 +27,12 @@ export default function RoleForm({
   onCancel,
 }: RoleFormProps) {
 
+  const [permissions, setPermissions] =
+    useState<Permission[]>([]);
+
+  const [selectedPermissions, setSelectedPermissions] =
+    useState<string[]>([]);
+
   const [form, setForm] = useState({
     code: "",
     name: "",
@@ -25,17 +41,81 @@ export default function RoleForm({
 
   useEffect(() => {
 
-    if (initialData) {
+    loadPermissions();
+
+  }, []);
+
+  useEffect(() => {
+
+    if (!initialData) {
 
       setForm({
-        code: initialData.code,
-        name: initialData.name,
-        description: initialData.description ?? "",
+        code: "",
+        name: "",
+        description: "",
       });
+
+      setSelectedPermissions([]);
+
+      return;
 
     }
 
+    setForm({
+      code: initialData.code,
+      name: initialData.name,
+      description:
+        initialData.description ?? "",
+    });
+
+    loadRolePermissions(
+      initialData.id,
+    );
+
   }, [initialData]);
+
+  async function loadPermissions() {
+
+    try {
+
+      const data =
+        await getPermissions();
+
+      setPermissions(data);
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
+
+  async function loadRolePermissions(
+    roleId: string,
+  ) {
+
+    try {
+
+      const data =
+        await getRolePermissions(
+          roleId,
+        );
+
+      setSelectedPermissions(
+        data.map(
+          (permission) =>
+            permission.id,
+        ),
+      );
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
 
   function handleInputChange(
     event: React.ChangeEvent<HTMLInputElement>
@@ -59,11 +139,15 @@ export default function RoleForm({
 
     event.preventDefault();
 
-    onSave(form);
+    onSave({
+      ...form,
+      permission_ids: selectedPermissions,
+    });
 
   }
 
   return (
+
     <form onSubmit={handleSubmit}>
 
       <Input
@@ -89,6 +173,16 @@ export default function RoleForm({
         onChange={handleInputChange}
       />
 
+      <MultiSelect
+        label="Permisos"
+        options={permissions.map((permission) => ({
+          value: permission.id,
+          label: permission.name,
+        }))}
+        values={selectedPermissions}
+        onChange={setSelectedPermissions}
+      />
+
       <div
         style={{
           display: "flex",
@@ -97,6 +191,7 @@ export default function RoleForm({
           marginTop: "20px",
         }}
       >
+
         <Button
           type="button"
           variant="secondary"
@@ -112,5 +207,7 @@ export default function RoleForm({
       </div>
 
     </form>
+
   );
+
 }

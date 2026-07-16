@@ -5,15 +5,18 @@ Start Command
 Inicializa la ceremonia oficial
 de apertura de un Sprint.
 """
-
+from commands.review_command import ReviewCommand
 from services.project_service import ProjectService
 from services.sprint_opening_service import SprintOpeningService
+
 
 
 class StartCommand:
 
     def run(self):
 
+        ReviewCommand().run()
+        
         project = ProjectService()
 
         project.open_next_sprint()

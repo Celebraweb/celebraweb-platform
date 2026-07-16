@@ -88,6 +88,11 @@ El Project Context únicamente podrá construirse utilizando información proven
 - PROJECT-RULES.md
 - Engineering Handbook
 - Decision Log
+- Product Backlog
+- Sprint Review
+- Sprint Retrospective
+- Open Issues
+- Technical Debt
 - Sprint Summary
 - Sprint Artifacts
 - Estado actual del proyecto
@@ -109,6 +114,11 @@ Antes de autorizar un Sprint, el PMO deberá:
 - identificar pendientes heredados;
 - construir el contexto operativo;
 - presentar un Executive Brief.
+- leer Product Backlog;
+- leer Sprint Review;
+- leer Sprint Retrospective;
+- leer Open Issues;
+- leer Technical Debt.
 
 ---
 
@@ -124,6 +134,11 @@ El Project Context deberá responder, como mínimo, las siguientes preguntas:
 - ¿Qué lecciones aprendidas debo aplicar?
 - ¿Qué pendientes afectan este Sprint?
 - ¿Qué componentes están autorizados para modificarse?
+- ¿Qué elementos permanecen en el Product Backlog?
+- ¿Qué Technical Debt continúa vigente?
+- ¿Qué Open Issues afectan el Sprint?
+- ¿Qué conclusiones dejó el último Sprint Review?
+- ¿Qué acciones surgieron de la Sprint Retrospective?
 
 ---
 
@@ -145,16 +160,21 @@ El conocimiento permanece únicamente en su fuente oficial.
 
 El Project Context formará parte del flujo oficial del comando:
 
+REVIEW
+
+↓
+
 START
 
 El flujo oficial será:
 
-1. Validar estructura del proyecto.
-2. Validar documentación requerida.
-3. Leer documentación oficial.
-4. Construir Project Context.
-5. Generar Executive Brief.
-6. Autorizar el Sprint.
+1. Ejecutar REVIEW.
+2. Validar estructura del proyecto.
+3. Validar documentación requerida.
+4. Leer documentación oficial.
+5. Construir Project Context.
+6. Generar Executive Brief.
+7. Autorizar el Sprint.
 
 ---
 
@@ -168,6 +188,11 @@ Un Sprint únicamente podrá considerarse listo para desarrollo cuando el PMO co
 - las decisiones vigentes fueron consideradas;
 - las lecciones aprendidas fueron incorporadas;
 - los pendientes heredados fueron identificados.
+- el Product Backlog fue revisado;
+- los Open Issues fueron identificados;
+- el Technical Debt fue considerado;
+- el Sprint Review fue consultado;
+- la Sprint Retrospective fue incorporada.
 
 ---
 

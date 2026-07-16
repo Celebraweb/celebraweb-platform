@@ -14,8 +14,8 @@ release:
   current: 0.3.0
   next: 0.4.0
 sprint:
-  current: 17
-  name: Sprint 17
+  current: 18
+  name: Sprint 18
   status: Closed
   objective: User Management
 engineering:
@@ -47,3 +47,31 @@ architecture:
     document: CW-230
     version: 1.1.0
     status: APPROVED
+project_memory:
+  version: 1.0.0
+  status: Active
+  review:
+    enabled: true
+  documents:
+    product_backlog: CW-140-Product-Backlog.md
+    sprint_review: CW-141-Sprint-Review.md
+    sprint_retrospective: CW-142-Sprint-Retrospective.md
+    open_issues: CW-143-Open-Issues.md
+    technical_debt: CW-144-Technical-Debt.md
+  review_order:
+  - project
+  - decision_log
+  - product_backlog
+  - sprint_review
+  - sprint_retrospective
+  - open_issues
+  - technical_debt
+  - sprint_summary
+  close_requirements:
+  - sprint_summary
+  - artifacts
+  - sprint_review
+  - sprint_retrospective
+  - product_backlog
+  - open_issues
+  - technical_debt

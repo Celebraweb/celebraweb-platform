@@ -41,6 +41,10 @@ Este protocolo es de cumplimiento obligatorio durante todo el ciclo de vida del 
 
 # Flujo Oficial del Sprint
 
+REVIEW
+
+↓
+
 START
 
 ↓
@@ -65,9 +69,37 @@ CLOSE
 
 ↓
 
-START
+REVIEW
 
 ---
+
+
+# Ceremonia 0 - Review
+
+## Momento
+
+Antes de iniciar oficialmente un nuevo Sprint.
+
+## Comando
+
+```powershell
+python tools/cw_pmo/main.py review
+```
+
+## Objetivos
+
+Reconstruir automáticamente el contexto del proyecto mediante la lectura de:
+
+- PROJECT.yaml
+- Decision Log
+- Product Backlog
+- Sprint Review
+- Sprint Retrospective
+- Open Issues
+- Technical Debt
+- Sprint Summary del Sprint anterior
+
+El resultado de esta ceremonia será el contexto oficial del Sprint que inicia.
 
 # Ceremonia 1 - Inicio del Sprint
 
@@ -89,6 +121,7 @@ python tools/cw_pmo/main.py start
 - Validar la documentación obligatoria.
 - Mostrar el estado del proyecto.
 - Autorizar oficialmente el Sprint.
+- Validar que la ceremonia Review haya sido ejecutada previamente.
 
 ---
 
@@ -161,6 +194,11 @@ Verificar:
 - Engineering Handbook
 - Sprint Summary
 - Artifacts
+- Product Backlog
+- Sprint Review
+- Sprint Retrospective
+- Open Issues
+- Technical Debt
 
 Si la validación falla, el Sprint no podrá cerrarse.
 
@@ -187,6 +225,11 @@ El PMO realiza automáticamente:
 - Actualización del Handbook.
 - Actualización del PROJECT.yaml.
 - Cambio del estado del Sprint a Closed.
+- Actualización de Product Backlog.
+- Actualización de Sprint Review.
+- Actualización de Sprint Retrospective.
+- Actualización de Open Issues.
+- Actualización de Technical Debt.
 
 ---
 
@@ -239,3 +282,19 @@ python tools/cw_pmo/main.py generate
 ```
 
 antes de ejecutar la sincronización, validación y cierre del Sprint.
+
+---
+
+## RG-010
+
+Nunca se inicia un Sprint sin ejecutar previamente:
+
+```powershell
+python tools/cw_pmo/main.py review
+```
+
+---
+
+## RG-011
+
+Los documentos Product Backlog, Sprint Review, Sprint Retrospective, Open Issues y Technical Debt constituyen la memoria viva del proyecto y deberán mantenerse actualizados durante todo el ciclo de vida de CelebraWeb.

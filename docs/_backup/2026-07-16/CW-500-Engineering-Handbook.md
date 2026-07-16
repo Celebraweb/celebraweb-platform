@@ -1411,8 +1411,7 @@ Los siguientes Sprint deberán enfocarse en:
 
 <!-- PMO:START -->
 
-
-## Estado del Proyecto
+# Estado del Proyecto
 
 Proyecto : CelebraWeb Platform
 
@@ -1426,10 +1425,49 @@ Sprint : 18
 
 Nombre Sprint : Sprint 18
 
-Estado : Closed
+Estado : In Progress
+
+---
+
+# Flujo Oficial del PMO
+
+review
+
+↓
+
+start
+
+↓
+
+generate
+
+↓
+
+sync
+
+↓
+
+validate
+
+↓
+
+close
+
+---
+
+# Project Memory
+
+El PMO mantiene la continuidad del proyecto mediante la lectura y actualización de los siguientes documentos corporativos:
+
+- Product Backlog
+- Sprint Review
+- Sprint Retrospective
+- Open Issues
+- Technical Debt
+
+Estos documentos constituyen la memoria viva del proyecto y son utilizados por el comando `review` para reconstruir automáticamente el contexto antes del inicio de cada Sprint.
 
 Última actualización automática por CW PMO.
-
 
 <!-- PMO:END -->
 

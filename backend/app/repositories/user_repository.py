@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 
 from app.models.user import User
+from app.models.user_role import UserRole
 from app.schemas.user import UserCreate, UserUpdate
 
 
@@ -144,9 +145,16 @@ class UserRepository:
 
             return False
 
+        (
+            db.query(UserRole)
+            .filter(
+                UserRole.user_id == user_id,
+            )
+            .delete()
+        )
+
         db.delete(db_user)
 
         db.commit()
 
         return True
-    

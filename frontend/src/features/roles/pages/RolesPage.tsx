@@ -12,6 +12,10 @@ import {
   deleteRole,
 } from "../services/role.service";
 
+import {
+  replaceRolePermissions,
+} from "../services/rolePermission.service";
+
 import RolesTable from "../components/RolesTable";
 import RoleForm from "../components/RoleForm";
 
@@ -82,20 +86,33 @@ export default function RolesPage() {
 
     try {
 
+      const {
+        permission_ids,
+        ...roleData
+      } = data;
+
+      let savedRole: Role;
+
       if (selectedRole) {
 
-        await updateRole(
+        savedRole = await updateRole(
           selectedRole.id,
-          data
+          roleData,
         );
 
       } else {
 
-        await createRole(data);
+        savedRole = await createRole(
+          roleData,
+        );
 
       }
 
-      setOpen(false);
+      await replaceRolePermissions(
+        savedRole.id,
+        permission_ids ?? [],
+      );
+            setOpen(false);
 
       setSelectedRole(null);
 
