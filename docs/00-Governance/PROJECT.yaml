@@ -14,9 +14,9 @@ release:
   current: 0.3.0
   next: 0.4.0
 sprint:
-  current: 18
-  name: Sprint 18
-  status: Closed
+  current: 19
+  name: Sprint 19
+  status: In Progress
   objective: User Management
 engineering:
   architecture: Approved
